@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 //create a PORT variable
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 //set up express to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -18,4 +18,6 @@ const htmlRoutes = require("./Develop/routes/htmlRoutes");
 app.use(htmlRoutes);
 
 //create server listener
-app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Starting server on http://localhost:${PORT}`);
+});
