@@ -5,16 +5,16 @@ const express = require('express');
 const app = express();
 
 //create a PORT variable
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 //set up express to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-const apiRoutes = require("./Develop/routes/apiRoutes");
+const apiRoutes = require("./routes/apiRoutes");
 app.use(apiRoutes);
-const htmlRoutes = require("./Develop/routes/htmlRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 app.use(htmlRoutes);
 
 //create server listener
